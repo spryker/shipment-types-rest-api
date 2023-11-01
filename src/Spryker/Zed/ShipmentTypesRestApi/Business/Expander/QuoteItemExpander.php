@@ -5,14 +5,14 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ShipmentTypesRestApi\Business\Mapper;
+namespace Spryker\Zed\ShipmentTypesRestApi\Business\Expander;
 
 use Generated\Shared\Transfer\ItemTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
 use Generated\Shared\Transfer\ShipmentMethodsCollectionTransfer;
 use Spryker\Zed\ShipmentTypesRestApi\Dependency\Facade\ShipmentTypesRestApiToShipmentFacadeInterface;
 
-class QuoteItemMapper implements QuoteItemMapperInterface
+class QuoteItemExpander implements QuoteItemExpanderInterface
 {
     /**
      * @var \Spryker\Zed\ShipmentTypesRestApi\Dependency\Facade\ShipmentTypesRestApiToShipmentFacadeInterface
@@ -32,7 +32,7 @@ class QuoteItemMapper implements QuoteItemMapperInterface
      *
      * @return \Generated\Shared\Transfer\QuoteTransfer
      */
-    public function mapShipmentTypesToQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer
+    public function expandQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         if (!$this->hasAtLeastOneShipmentMethod($quoteTransfer)) {
             return $quoteTransfer;
@@ -50,6 +50,10 @@ class QuoteItemMapper implements QuoteItemMapperInterface
             $shipmentTypeTransfer = $shipmentTypeTransfersIndexedByIdShipmentMethod[$idShipmentMethod] ?? null;
 
             $itemTransfer->setShipmentType($shipmentTypeTransfer);
+
+            if ($shipmentTypeTransfer) {
+                $itemTransfer->getShipmentOrFail()->setShipmentTypeUuid($shipmentTypeTransfer->getUuidOrFail());
+            }
         }
 
         return $quoteTransfer;

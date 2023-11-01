@@ -5,16 +5,16 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ShipmentTypesRestApi\Business\Mapper;
+namespace Spryker\Zed\ShipmentTypesRestApi\Business\Expander;
 
 use Generated\Shared\Transfer\QuoteTransfer;
 
-interface QuoteItemMapperInterface
+interface QuoteItemExpanderInterface
 {
     /**
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return \Generated\Shared\Transfer\QuoteTransfer
      */
-    public function mapShipmentTypesToQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer;
+    public function expandQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer;
 }
