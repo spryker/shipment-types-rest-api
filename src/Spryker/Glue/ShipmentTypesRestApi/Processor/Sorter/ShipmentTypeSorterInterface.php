@@ -13,7 +13,7 @@ interface ShipmentTypeSorterInterface
 {
     /**
      * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param list<\Spryker\Glue\GlueApplication\Rest\Request\Data\SortInterface> $sorts
+     * @param array<\Spryker\Glue\GlueApplication\Rest\Request\Data\SortInterface> $sorts
      *
      * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
      */

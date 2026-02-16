@@ -36,7 +36,7 @@ class ShipmentTypesRestApiToShipmentFacadeBridge implements ShipmentTypesRestApi
     }
 
     /**
-     * @return list<\Generated\Shared\Transfer\ShipmentMethodTransfer>
+     * @return array<\Generated\Shared\Transfer\ShipmentMethodTransfer>
      */
     public function getMethods(): array
     {
