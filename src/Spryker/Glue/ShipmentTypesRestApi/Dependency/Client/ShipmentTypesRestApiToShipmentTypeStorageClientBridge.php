@@ -25,11 +25,6 @@ class ShipmentTypesRestApiToShipmentTypeStorageClientBridge implements ShipmentT
         $this->shipmentTypeStorageClient = $shipmentTypeStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function getShipmentTypeStorageCollection(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer {

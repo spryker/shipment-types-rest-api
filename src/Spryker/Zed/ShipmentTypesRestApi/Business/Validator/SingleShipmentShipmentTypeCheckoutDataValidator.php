@@ -27,10 +27,6 @@ class SingleShipmentShipmentTypeCheckoutDataValidator extends AbstractShipmentTy
      */
     protected ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Business\Reader\ShipmentMethodReaderInterface $shipmentMethodReader
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Business\ErrorCreator\ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator
-     */
     public function __construct(
         ShipmentMethodReaderInterface $shipmentMethodReader,
         ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator
@@ -39,11 +35,6 @@ class SingleShipmentShipmentTypeCheckoutDataValidator extends AbstractShipmentTy
         $this->shipmentTypeCheckoutErrorCreator = $shipmentTypeCheckoutErrorCreator;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validateShipmentTypeCheckoutData(CheckoutDataTransfer $checkoutDataTransfer): CheckoutResponseTransfer
     {
         $checkoutResponseTransfer = (new CheckoutResponseTransfer())->setIsSuccess(true);

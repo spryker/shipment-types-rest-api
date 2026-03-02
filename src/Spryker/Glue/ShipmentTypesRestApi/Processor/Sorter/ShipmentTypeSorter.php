@@ -46,12 +46,6 @@ class ShipmentTypeSorter implements ShipmentTypeSorterInterface
         return $shipmentTypeStorageCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param string $sortDirection
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function sortShipmentTypeStorageCollectionByKey(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         string $sortDirection

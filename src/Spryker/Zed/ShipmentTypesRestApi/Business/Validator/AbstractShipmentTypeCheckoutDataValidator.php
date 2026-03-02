@@ -12,23 +12,11 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 abstract class AbstractShipmentTypeCheckoutDataValidator
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return bool
-     */
     protected function isValidShipmentType(ShipmentTypeTransfer $shipmentTypeTransfer, StoreTransfer $storeTransfer): bool
     {
         return $shipmentTypeTransfer->getIsActive() && $this->hasStoreRelation($shipmentTypeTransfer, $storeTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return bool
-     */
     protected function hasStoreRelation(ShipmentTypeTransfer $shipmentTypeTransfer, StoreTransfer $storeTransfer): bool
     {
         if (!$shipmentTypeTransfer->getStoreRelation()) {

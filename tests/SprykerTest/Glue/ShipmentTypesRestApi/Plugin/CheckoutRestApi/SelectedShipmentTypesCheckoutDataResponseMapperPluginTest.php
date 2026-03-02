@@ -44,9 +44,6 @@ class SelectedShipmentTypesCheckoutDataResponseMapperPluginTest extends Unit
      */
     protected ShipmentTypesRestApiPluginTester $tester;
 
-    /**
-     * @return void
-     */
     public function testMapMapsDataWhenSingleShipmentRequestGiven(): void
     {
         // Arrange
@@ -80,9 +77,6 @@ class SelectedShipmentTypesCheckoutDataResponseMapperPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapMapsUniqueRestShipmentTypeTransfersWhenSingleShipmentRequestGiven(): void
     {
         // Arrange
@@ -121,9 +115,6 @@ class SelectedShipmentTypesCheckoutDataResponseMapperPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapDoesntMapDataWhenMultiShipmentRequestGiven(): void
     {
         // Arrange
@@ -150,9 +141,6 @@ class SelectedShipmentTypesCheckoutDataResponseMapperPluginTest extends Unit
         $this->assertCount(0, $restCheckoutDataResponseAttributesTransfer->getSelectedShipmentTypes());
     }
 
-    /**
-     * @return void
-     */
     public function testMapDoesntMapDataWhenItemWithoutShipmentTypeGiven(): void
     {
         // Arrange

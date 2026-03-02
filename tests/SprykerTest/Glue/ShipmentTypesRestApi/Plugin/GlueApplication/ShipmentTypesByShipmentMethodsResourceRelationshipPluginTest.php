@@ -57,9 +57,6 @@ class ShipmentTypesByShipmentMethodsResourceRelationshipPluginTest extends Unit
      */
     protected ShipmentTypesRestApiPluginTester $tester;
 
-    /**
-     * @return void
-     */
     public function _before(): void
     {
         parent::_before();
@@ -67,9 +64,6 @@ class ShipmentTypesByShipmentMethodsResourceRelationshipPluginTest extends Unit
         $this->tester->getContainer()->set(static::SERVICE_RESOURCE_BUILDER, new RestResourceBuilder());
     }
 
-    /**
-     * @return void
-     */
     public function testAddResourceRelationshipsShouldAddResourceRelationshipWhenResourceHasShipmentType(): void
     {
         // Arrange
@@ -88,9 +82,6 @@ class ShipmentTypesByShipmentMethodsResourceRelationshipPluginTest extends Unit
         $this->assertCount(1, $restResource->getRelationshipByType(static::RESOURCE_TYPE_SHIPMENT_TYPES));
     }
 
-    /**
-     * @return void
-     */
     public function testAddResourceRelationshipsShouldNotAddResourceRelationshipWhenResourceHasNoPayload(): void
     {
         // Arrange
@@ -104,9 +95,6 @@ class ShipmentTypesByShipmentMethodsResourceRelationshipPluginTest extends Unit
         $this->assertEmpty($restResource->getRelationships());
     }
 
-    /**
-     * @return void
-     */
     public function testAddResourceRelationshipsShouldNotAddResourceRelationshipWhenResourceHasWrongPayload(): void
     {
         // Arrange
@@ -121,9 +109,6 @@ class ShipmentTypesByShipmentMethodsResourceRelationshipPluginTest extends Unit
         $this->assertEmpty($restResource->getRelationships());
     }
 
-    /**
-     * @return void
-     */
     public function testAddResourceRelationshipsShouldNotAddResourceRelationshipWhenResourceHasPayloadWithoutShipmentType(): void
     {
         // Arrange

@@ -43,9 +43,6 @@ class ShipmentTypesRestApiFacadeTest extends Unit
      */
     protected ShipmentTypesRestApiBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandQuoteItemsWithShipmentTypesShouldExpandQuoteItemsWhenShipmentMethodProvided(): void
     {
         // Arrange
@@ -78,9 +75,6 @@ class ShipmentTypesRestApiFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQuoteItemsWithShipmentTypesShouldExpandQuoteItemsWhenShipmentMethodProvidedAndQuoteHasMultipleItemsWithSameShipmentType(): void
     {
         // Arrange
@@ -121,9 +115,6 @@ class ShipmentTypesRestApiFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQuoteItemsWithShipmentTypesShouldExpandQuoteItemsWhenShipmentMethodProvidedAndQuoteHasMultipleItemsWithDifferentShipmentTypes(): void
     {
         // Arrange
@@ -161,9 +152,6 @@ class ShipmentTypesRestApiFacadeTest extends Unit
         $this->assertSame($quoteTransfer->getItems()[1]->getShipmentOrFail()->getShipmentTypeUuidOrFail(), $shipmentTypeTransfer2->getUuidOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQuoteItemsWithShipmentTypesShouldNotExpandQuoteItemsWhenShipmentMethodDoesNotProvided(): void
     {
         // Arrange
@@ -184,9 +172,6 @@ class ShipmentTypesRestApiFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testExpandQuoteItemsWithShipmentTypesShouldNotExpandQuoteItemsWhenShipmentMethodProvidedButNotAvailable(): void
     {
         // Arrange

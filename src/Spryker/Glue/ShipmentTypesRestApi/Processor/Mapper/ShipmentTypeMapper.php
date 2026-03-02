@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\ShipmentTypeTransfer;
 
 class ShipmentTypeMapper implements ShipmentTypeMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     * @param \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer
-     */
     public function mapShipmentTypeStorageTransferToRestShipmentTypesAttributesTransfer(
         ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer,
         RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
@@ -26,12 +20,6 @@ class ShipmentTypeMapper implements ShipmentTypeMapperInterface
         return $restShipmentTypesAttributesTransfer->fromArray($shipmentTypeStorageTransfer->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer
-     */
     public function mapShipmentTypeTransferToRestShipmentTypesAttributesTransfer(
         ShipmentTypeTransfer $shipmentTypeTransfer,
         RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer

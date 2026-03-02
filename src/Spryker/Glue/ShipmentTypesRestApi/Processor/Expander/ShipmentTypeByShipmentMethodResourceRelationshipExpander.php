@@ -27,10 +27,6 @@ class ShipmentTypeByShipmentMethodResourceRelationshipExpander implements Shipme
      */
     protected ShipmentTypeMapperInterface $shipmentTypeMapper;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Processor\Mapper\ShipmentTypeMapperInterface $shipmentTypeMapper
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ShipmentTypeMapperInterface $shipmentTypeMapper
@@ -62,11 +58,6 @@ class ShipmentTypeByShipmentMethodResourceRelationshipExpander implements Shipme
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createShipmentTypesRestResource(ShipmentTypeTransfer $shipmentTypeTransfer): RestResourceInterface
     {
         $restShipmentTypesAttributesTransfer = $this

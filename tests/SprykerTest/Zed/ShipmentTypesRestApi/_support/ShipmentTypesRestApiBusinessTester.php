@@ -59,12 +59,6 @@ class ShipmentTypesRestApiBusinessTester extends Actor
         $this->getFacade()->setFactory($shipmentTypesRestApiBusinessFactory);
     }
 
-    /**
-     * @param int $idShipmentMethod
-     * @param int $idShipmentType
-     *
-     * @return void
-     */
     public function createShipmentMethodShipmentTypeRelation(int $idShipmentMethod, int $idShipmentType): void
     {
         $shipmentMethodEntity = $this->getShipmentMethodQuery()
@@ -75,9 +69,6 @@ class ShipmentTypesRestApiBusinessTester extends Actor
         $shipmentMethodEntity->save();
     }
 
-    /**
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethodQuery
-     */
     protected function getShipmentMethodQuery(): SpyShipmentMethodQuery
     {
         return SpyShipmentMethodQuery::create();

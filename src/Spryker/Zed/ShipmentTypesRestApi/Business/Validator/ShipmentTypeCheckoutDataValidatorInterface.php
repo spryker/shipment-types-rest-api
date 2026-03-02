@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\CheckoutResponseTransfer;
 
 interface ShipmentTypeCheckoutDataValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validateShipmentTypeCheckoutData(CheckoutDataTransfer $checkoutDataTransfer): CheckoutResponseTransfer;
 }

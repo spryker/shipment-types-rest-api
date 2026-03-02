@@ -15,10 +15,5 @@ use Spryker\Zed\ShipmentTypesRestApi\Business\Validator\ShipmentTypeCheckoutData
  */
 interface ShipmentTypeCheckoutDataValidatorStrategyResolverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\Validator\ShipmentTypeCheckoutDataValidatorInterface
-     */
     public function resolve(CheckoutDataTransfer $checkoutDataTransfer): ShipmentTypeCheckoutDataValidatorInterface;
 }

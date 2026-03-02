@@ -19,13 +19,6 @@ use Generated\Shared\Transfer\ShipmentTypeTransfer;
  */
 class CheckoutDataResponseAttributesExpander implements CheckoutDataResponseAttributesExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
-     * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer
-     */
     public function expandCheckoutDataResponseAttributesWithSelectedShipmentTypes(
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
@@ -62,12 +55,6 @@ class CheckoutDataResponseAttributesExpander implements CheckoutDataResponseAttr
         return new ArrayObject(array_values($restShipmentTypeTransfers));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\RestShipmentTypeTransfer $restShipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShipmentTypeTransfer
-     */
     protected function mapShipmentTypeTransferToRestShipmentTypeTransfer(
         ShipmentTypeTransfer $shipmentTypeTransfer,
         RestShipmentTypeTransfer $restShipmentTypeTransfer

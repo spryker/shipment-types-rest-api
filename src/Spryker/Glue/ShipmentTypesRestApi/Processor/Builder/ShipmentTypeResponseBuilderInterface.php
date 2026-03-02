@@ -13,26 +13,11 @@ use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 
 interface ShipmentTypeResponseBuilderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeRestResponse(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer): RestResponseInterface;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeCollectionRestResponse(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
     ): RestResponseInterface;
 
-    /**
-     * @param string $locale
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeNotFoundErrorResponse(string $locale): RestResponseInterface;
 }

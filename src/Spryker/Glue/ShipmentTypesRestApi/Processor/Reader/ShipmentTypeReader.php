@@ -38,12 +38,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
      */
     protected ShipmentTypeSorterInterface $shipmentTypeSorter;
 
-    /**
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Dependency\Client\ShipmentTypesRestApiToShipmentTypeStorageClientInterface $shipmentTypeStorageClient
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Dependency\Client\ShipmentTypesRestApiToStoreClientInterface $storeClient
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Processor\Builder\ShipmentTypeResponseBuilderInterface $shipmentTypeResponseBuilder
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Processor\Sorter\ShipmentTypeSorterInterface $shipmentTypeSorter
-     */
     public function __construct(
         ShipmentTypesRestApiToShipmentTypeStorageClientInterface $shipmentTypeStorageClient,
         ShipmentTypesRestApiToStoreClientInterface $storeClient,
@@ -56,11 +50,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         $this->shipmentTypeSorter = $shipmentTypeSorter;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getShipmentType(RestRequestInterface $restRequest): RestResponseInterface
     {
         $shipmentTypeStorageCollectionTransfer = $this->shipmentTypeStorageClient->getShipmentTypeStorageCollection(
@@ -77,11 +66,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         return $this->shipmentTypeResponseBuilder->createShipmentTypeRestResponse($shipmentTypeStorageTransfer);
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getShipmentTypeCollection(RestRequestInterface $restRequest): RestResponseInterface
     {
         $shipmentTypeStorageCollectionTransfer = $this->shipmentTypeStorageClient->getShipmentTypeStorageCollection(
@@ -97,11 +81,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
             ->createShipmentTypeCollectionRestResponse($shipmentTypeStorageCollectionTransfer);
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer
-     */
     protected function createShipmentTypeStorageCriteriaTransfer(RestRequestInterface $restRequest): ShipmentTypeStorageCriteriaTransfer
     {
         $shipmentTypeStorageConditionsTransfer = (new ShipmentTypeStorageConditionsTransfer())

@@ -19,19 +19,11 @@ class QuoteItemExpander implements QuoteItemExpanderInterface
      */
     protected ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Dependency\Facade\ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade
-     */
     public function __construct(ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade)
     {
         $this->shipmentFacade = $shipmentFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function expandQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         if (!$this->hasAtLeastOneShipmentMethod($quoteTransfer)) {
@@ -78,11 +70,6 @@ class QuoteItemExpander implements QuoteItemExpanderInterface
         return array_filter($shipmentTypeTransfersIndexedByIdShipmentMethod);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function hasAtLeastOneShipmentMethod(QuoteTransfer $quoteTransfer): bool
     {
         /** @var \Generated\Shared\Transfer\ItemTransfer $itemTransfer */
@@ -95,11 +82,6 @@ class QuoteItemExpander implements QuoteItemExpanderInterface
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function hasShipmentMethod(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getShipment() && $itemTransfer->getShipmentOrFail()->getMethod();

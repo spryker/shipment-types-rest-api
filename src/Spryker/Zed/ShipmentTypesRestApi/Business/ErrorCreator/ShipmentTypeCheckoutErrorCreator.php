@@ -22,11 +22,6 @@ class ShipmentTypeCheckoutErrorCreator implements ShipmentTypeCheckoutErrorCreat
      */
     protected const ERROR_MESSAGE_PARAMETER_NAME = '%name%';
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutErrorTransfer
-     */
     public function createShipmentTypeNotAvailableCheckoutErrorTransfer(ShipmentTypeTransfer $shipmentTypeTransfer): CheckoutErrorTransfer
     {
         return (new CheckoutErrorTransfer())

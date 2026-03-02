@@ -13,23 +13,11 @@ use Generated\Shared\Transfer\ShipmentTypeTransfer;
 
 interface ShipmentTypeMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     * @param \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer
-     */
     public function mapShipmentTypeStorageTransferToRestShipmentTypesAttributesTransfer(
         ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer,
         RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
     ): RestShipmentTypesAttributesTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer
-     */
     public function mapShipmentTypeTransferToRestShipmentTypesAttributesTransfer(
         ShipmentTypeTransfer $shipmentTypeTransfer,
         RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer

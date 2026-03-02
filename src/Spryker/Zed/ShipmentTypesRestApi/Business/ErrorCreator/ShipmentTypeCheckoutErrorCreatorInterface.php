@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ShipmentTypeTransfer;
 
 interface ShipmentTypeCheckoutErrorCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutErrorTransfer
-     */
     public function createShipmentTypeNotAvailableCheckoutErrorTransfer(ShipmentTypeTransfer $shipmentTypeTransfer): CheckoutErrorTransfer;
 }

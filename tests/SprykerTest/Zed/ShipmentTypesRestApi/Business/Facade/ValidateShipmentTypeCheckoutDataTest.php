@@ -43,9 +43,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
      */
     protected ShipmentTypesRestApiBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function _setUp(): void
     {
         parent::_setUp();
@@ -58,9 +55,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenShipmentTypeIsInactiveAndMultiShipmentIsUsed(): void
     {
         // Arrange
@@ -97,9 +91,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenShipmentTypeHasNoStoreRelationAndMultiShipmentIsUsed(): void
     {
         // Arrange
@@ -135,9 +126,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentMethodHasActiveShipmentTypeWithRelatedStoreAndMultiShipmentIsUsed(): void
     {
         // Arrange
@@ -170,9 +158,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         $this->assertEmpty($checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentMethodHasNoShipmentTypeAndMultiShipmentIsUsed(): void
     {
         // Arrange
@@ -197,9 +182,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         $this->assertEmpty($checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentHaveNoAssignedMethodsAndMultiShipmentIsUsed(): void
     {
         // Arrange
@@ -222,9 +204,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         $this->assertEmpty($checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenShipmentTypeIsInactiveAndSingleShipmentIsUsed(): void
     {
         // Arrange
@@ -261,9 +240,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenShipmentTypeHasNoStoreRelationAndSingleShipmentIsUsed(): void
     {
         // Arrange
@@ -299,9 +275,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentMethodHasActiveShipmentTypeWithRelatedStoreAndSingleShipmentIsUsed(): void
     {
         // Arrange
@@ -334,9 +307,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         $this->assertEmpty($checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentMethodHasNoShipmentTypeAndSingleShipmentIsUsed(): void
     {
         // Arrange
@@ -361,9 +331,6 @@ class ValidateShipmentTypeCheckoutDataTest extends Unit
         $this->assertEmpty($checkoutResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorsWhenShipmentHaveNoAssignedMethodsAndSingleShipmentIsUsed(): void
     {
         // Arrange

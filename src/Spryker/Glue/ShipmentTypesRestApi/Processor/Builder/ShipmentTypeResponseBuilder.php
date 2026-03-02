@@ -33,11 +33,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
      */
     protected ErrorResponseBuilderInterface $errorResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Processor\Mapper\ShipmentTypeMapperInterface $shipmentTypeMapper
-     * @param \Spryker\Glue\ShipmentTypesRestApi\Processor\Builder\ErrorResponseBuilderInterface $errorResponseBuilder
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ShipmentTypeMapperInterface $shipmentTypeMapper,
@@ -48,11 +43,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
         $this->errorResponseBuilder = $errorResponseBuilder;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeRestResponse(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer): RestResponseInterface
     {
         $restShipmentTypesAttributesTransfer = $this
@@ -70,11 +60,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
         return $this->restResourceBuilder->createRestResponse()->addResource($shipmentTypeRestResource);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeCollectionRestResponse(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
     ): RestResponseInterface {
@@ -98,11 +83,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
         return $restResponse;
     }
 
-    /**
-     * @param string $locale
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createShipmentTypeNotFoundErrorResponse(string $locale): RestResponseInterface
     {
         return $this
@@ -113,12 +93,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer
-     * @param string $shipmentTypeUuid
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createShipmentTypeRestResource(
         RestShipmentTypesAttributesTransfer $restShipmentTypesAttributesTransfer,
         string $shipmentTypeUuid

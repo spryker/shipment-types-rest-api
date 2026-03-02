@@ -31,9 +31,6 @@ use Spryker\Glue\ShipmentTypesRestApi\Processor\Sorter\ShipmentTypeSorterInterfa
  */
 class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
 {
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Reader\ShipmentTypeReaderInterface
-     */
     public function createShipmentTypeReader(): ShipmentTypeReaderInterface
     {
         return new ShipmentTypeReader(
@@ -44,9 +41,6 @@ class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Builder\ShipmentTypeResponseBuilderInterface
-     */
     public function createShipmentTypeResponseBuilder(): ShipmentTypeResponseBuilderInterface
     {
         return new ShipmentTypeResponseBuilder(
@@ -56,9 +50,6 @@ class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Mapper\ShipmentTypeMapperInterface
-     */
     public function createShipmentTypeMapper(): ShipmentTypeMapperInterface
     {
         return new ShipmentTypeMapper();
@@ -74,17 +65,11 @@ class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
         return new CheckoutDataResponseAttributesExpander();
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Sorter\ShipmentTypeSorterInterface
-     */
     public function createShipmentTypeSorter(): ShipmentTypeSorterInterface
     {
         return new ShipmentTypeSorter();
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Builder\ErrorResponseBuilderInterface
-     */
     public function createErrorResponseBuilder(): ErrorResponseBuilderInterface
     {
         return new ErrorResponseBuilder(
@@ -94,9 +79,6 @@ class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Processor\Expander\ShipmentTypeByShipmentMethodResourceRelationshipExpanderInterface
-     */
     public function createShipmentTypeByShipmentMethodResourceRelationshipExpander(): ShipmentTypeByShipmentMethodResourceRelationshipExpanderInterface
     {
         return new ShipmentTypeByShipmentMethodResourceRelationshipExpander(
@@ -105,25 +87,16 @@ class ShipmentTypesRestApiFactory extends AbstractStorefrontApiFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Dependency\Client\ShipmentTypesRestApiToShipmentTypeStorageClientInterface
-     */
     public function getShipmentTypeStorageClient(): ShipmentTypesRestApiToShipmentTypeStorageClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypesRestApiDependencyProvider::CLIENT_SHIPMENT_TYPE_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Dependency\Client\ShipmentTypesRestApiToStoreClientInterface
-     */
     public function getStoreClient(): ShipmentTypesRestApiToStoreClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypesRestApiDependencyProvider::CLIENT_STORE);
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesRestApi\Dependency\Client\ShipmentTypesRestApiToGlossaryStorageClientInterface
-     */
     public function getGlossaryStorageClient(): ShipmentTypesRestApiToGlossaryStorageClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypesRestApiDependencyProvider::CLIENT_GLOSSARY_STORAGE);

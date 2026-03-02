@@ -24,10 +24,6 @@ class MultiShipmentShipmentTypeCheckoutDataValidator extends AbstractShipmentTyp
      */
     protected ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Business\Reader\ShipmentMethodReaderInterface $shipmentMethodReader
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Business\ErrorCreator\ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator
-     */
     public function __construct(
         ShipmentMethodReaderInterface $shipmentMethodReader,
         ShipmentTypeCheckoutErrorCreatorInterface $shipmentTypeCheckoutErrorCreator
@@ -36,11 +32,6 @@ class MultiShipmentShipmentTypeCheckoutDataValidator extends AbstractShipmentTyp
         $this->shipmentTypeCheckoutErrorCreator = $shipmentTypeCheckoutErrorCreator;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validateShipmentTypeCheckoutData(CheckoutDataTransfer $checkoutDataTransfer): CheckoutResponseTransfer
     {
         $checkoutResponseTransfer = (new CheckoutResponseTransfer())->setIsSuccess(true);
@@ -74,11 +65,6 @@ class MultiShipmentShipmentTypeCheckoutDataValidator extends AbstractShipmentTyp
         return $checkoutResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return bool
-     */
     protected function hasAssignedShipmentMethods(CheckoutDataTransfer $checkoutDataTransfer): bool
     {
         foreach ($checkoutDataTransfer->getShipments() as $shipmentTransfer) {

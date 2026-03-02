@@ -16,9 +16,6 @@ class ShipmentMethodReader implements ShipmentMethodReaderInterface
      */
     protected ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypesRestApi\Dependency\Facade\ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade
-     */
     public function __construct(ShipmentTypesRestApiToShipmentFacadeInterface $shipmentFacade)
     {
         $this->shipmentFacade = $shipmentFacade;

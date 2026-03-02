@@ -23,9 +23,6 @@ use Spryker\Zed\ShipmentTypesRestApi\ShipmentTypesRestApiDependencyProvider;
 
 class ShipmentTypesRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\Expander\QuoteItemExpander
-     */
     public function createQuoteItemExpander(): QuoteItemExpander
     {
         return new QuoteItemExpander(
@@ -52,9 +49,6 @@ class ShipmentTypesRestApiBusinessFactory extends AbstractBusinessFactory
         return new ShipmentTypeCheckoutDataValidatorStrategyResolver($strategyContainer);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\Validator\ShipmentTypeCheckoutDataValidatorInterface
-     */
     public function createMultiShipmentShipmentTypeCheckoutDataValidator(): ShipmentTypeCheckoutDataValidatorInterface
     {
         return new MultiShipmentShipmentTypeCheckoutDataValidator(
@@ -63,9 +57,6 @@ class ShipmentTypesRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\Validator\ShipmentTypeCheckoutDataValidatorInterface
-     */
     public function createSingleShipmentShipmentTypeCheckoutDataValidator(): ShipmentTypeCheckoutDataValidatorInterface
     {
         return new SingleShipmentShipmentTypeCheckoutDataValidator(
@@ -74,9 +65,6 @@ class ShipmentTypesRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\Reader\ShipmentMethodReaderInterface
-     */
     public function createShipmentMethodReader(): ShipmentMethodReaderInterface
     {
         return new ShipmentMethodReader(
@@ -84,17 +72,11 @@ class ShipmentTypesRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Business\ErrorCreator\ShipmentTypeCheckoutErrorCreatorInterface
-     */
     public function createShipmentTypeCheckoutErrorCreator(): ShipmentTypeCheckoutErrorCreatorInterface
     {
         return new ShipmentTypeCheckoutErrorCreator();
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypesRestApi\Dependency\Facade\ShipmentTypesRestApiToShipmentFacadeInterface
-     */
     public function getShipmentFacade(): ShipmentTypesRestApiToShipmentFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypesRestApiDependencyProvider::FACADE_SHIPMENT);
