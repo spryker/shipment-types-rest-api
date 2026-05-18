@@ -1,0 +1,34 @@
+resource:
+    name: ShipmentTypes
+    shortName: shipment-types
+    description: 'Shipment types exposed as a relationship target for `checkout-data`. Populated through `Spryker\Glue\CheckoutRestApi\Api\Storefront\Relationship\CheckoutDataShipmentTypesRelationshipResolver`; the legacy `ShipmentTypesResourceRoutePlugin` keeps serving `GET /shipment-types` directly.'
+
+    includableIn:
+        - resource: CheckoutData
+          relationshipName: shipment-types
+
+    properties:
+        uuid:
+            type: string
+            identifier: true
+            readable: true
+            writable: false
+            description: 'Shipment type UUID.'
+            openapiContext:
+                example: '0e6d2c2e-6b3c-5e9f-9b2c-9b2c9b2c9b2c'
+
+        name:
+            type: string
+            readable: true
+            writable: false
+            description: 'Shipment type name.'
+            openapiContext:
+                example: 'Express'
+
+        key:
+            type: string
+            readable: true
+            writable: false
+            description: 'Shipment type key.'
+            openapiContext:
+                example: 'express'
