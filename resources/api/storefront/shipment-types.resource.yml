@@ -1,17 +1,44 @@
 resource:
     name: ShipmentTypes
     shortName: shipment-types
-    description: 'Shipment types exposed as a relationship target for `checkout-data`. Populated through `Spryker\Glue\CheckoutRestApi\Api\Storefront\Relationship\CheckoutDataShipmentTypesRelationshipResolver`; the legacy `ShipmentTypesResourceRoutePlugin` keeps serving `GET /shipment-types` directly.'
+    description: Shipment types listing API for Storefront operations
+
+    provider: Spryker\Glue\ShipmentTypesRestApi\Api\Storefront\Provider\ShipmentTypesStorefrontProvider
+
+    paginationEnabled: false
+
+    operations:
+        - type: Get
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shipment type returned.'
+                  404:
+                      description: 'Shipment type not found.'
+        - type: GetCollection
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shipment types collection returned.'
+                  400:
+                      description: 'Invalid sort parameter.'
 
     includableIn:
         - resource: CheckoutData
           relationshipName: shipment-types
 
+    includes:
+        - relationshipName: service-types
+          targetResource: ServiceTypes
+          uriTemplate: /service-types/{uuid}
+          uriVariableMappings:
+              serviceTypeUuid: uuid
+
     properties:
         uuid:
             type: string
             identifier: true
-            readable: true
+            readable: false
             writable: false
             description: 'Shipment type UUID.'
             openapiContext:
@@ -32,3 +59,9 @@ resource:
             description: 'Shipment type key.'
             openapiContext:
                 example: 'express'
+
+        serviceTypeUuid:
+            type: string
+            readable: false
+            writable: false
+            description: 'Service type UUID for relationship resolution.'
