@@ -23,10 +23,6 @@ resource:
                   400:
                       description: 'Invalid sort parameter.'
 
-    includableIn:
-        - resource: CheckoutData
-          relationshipName: shipment-types
-
     includes:
         - relationshipName: service-types
           targetResource: ServiceTypes
