@@ -15,13 +15,13 @@ resource:
                       description: 'Shipment type returned.'
                   404:
                       description: 'Shipment type not found.'
+        # No 400: an unsupported `sort` field is silently ignored rather than rejected, see
+        # ShipmentTypesStorefrontProvider::sortResources().
         - type: GetCollection
           openapiContext:
               responses:
                   200:
                       description: 'Shipment types collection returned.'
-                  400:
-                      description: 'Invalid sort parameter.'
 
     includes:
         - relationshipName: service-types
