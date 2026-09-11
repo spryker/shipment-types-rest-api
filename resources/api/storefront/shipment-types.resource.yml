@@ -19,6 +19,15 @@ resource:
         # ShipmentTypesStorefrontProvider::sortResources().
         - type: GetCollection
           openapiContext:
+              parameters:
+                  - name: 'sort'
+                    in: query
+                    required: false
+                    description: 'Sort by shipment type key, prefixed with `-` for descending order. Other fields are ignored.'
+                    schema:
+                        type: string
+                        enum: ['key', '-key']
+                    example: 'key'
               responses:
                   200:
                       description: 'Shipment types collection returned.'
