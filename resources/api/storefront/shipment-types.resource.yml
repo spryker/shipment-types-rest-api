@@ -9,6 +9,9 @@ resource:
 
     operations:
         - type: Get
+          extraProperties:
+              notFoundCode: '5501'
+              notFoundMessage: 'A delivery type entity was not found.'
           openapiContext:
               responses:
                   200:
