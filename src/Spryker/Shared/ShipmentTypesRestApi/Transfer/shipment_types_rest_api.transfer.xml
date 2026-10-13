@@ -75,6 +75,8 @@
     <transfer name="ShipmentTypeStorage" strict="true">
         <property name="uuid" type="string" description="A Universally Unique Identifier for an entity."/>
         <property name="key" type="string" description="A unique key used to identify an entity or a piece of data."/>
+        <property name="serviceType" type="ServiceTypeStorage"/>
+        <property name="name" type="string"/>
     </transfer>
 
     <transfer name="ShipmentTypeStorageCriteria" strict="true">
@@ -116,6 +118,10 @@
 
     <transfer name="RestShipment">
         <property name="idShipmentMethod" type="int"/>
+    </transfer>
+
+    <transfer name="ServiceTypeStorage" strict="true">
+        <property name="uuid" type="string"/>
     </transfer>
 
 </transfers>
